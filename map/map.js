@@ -5,6 +5,7 @@ console.log(wantedlocation);
 const setup = () => {
     loadFloorChange();
     initNodes();
+    lines();
 }
 
 const loadFloorChange = () =>{
@@ -55,9 +56,15 @@ const initNodes = () =>{
     });
 }
 
-
-
-
-
+const lines = () =>{
+    var newLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    newLine.setAttribute('id','line1');
+    newLine.setAttribute('x1', node[0].x);
+    newLine.setAttribute('y1', node[0].y);
+    newLine.setAttribute('x2',node[1].x);
+    newLine.setAttribute('y2',node[1].y);
+    newLine.setAttribute("stroke", "red")
+    $("svg").append(newLine);
+}
 
 window.addEventListener("load",setup);
