@@ -8,11 +8,13 @@
 </head>
 <body>
     <h1>Welkom op Vives!</h1>
-    <p>Je bent nu hier: </p><input style="border: none;" type="text" id="textbox" readonly disabled>
+    <p>Je bent nu hier: </p>
+    <input style="border: none;" type="text" id="textbox" readonly disabled/>
+
     <br><br>
     <label for="firstList">Selecteer een hantal:</label>
     <select id="firstList" onchange="updateSecondList()">
-        <option value="">--Select--</option>
+        <option value="--Select--">--Select--</option>
         <option value="Hantal 1">Hantal 1</option>
         <option value="Hantal 2">Hantal 2</option>
         <option value="Hantal 3">Hantal 3</option>
@@ -22,8 +24,8 @@
     </select>
 <br><br>
 
-    <select hidden="hidden" id="hantal1">
-        <option value="">--Select--</option>
+    <select hidden="hidden" id="hantal1" onchange="updateButton()">
+        <option value="--Select--">--Select--</option>
         <option value="1.01">1.01</option>
         <option value="1.05">1.05</option>
         <option value="1.06">1.06</option>
@@ -37,8 +39,8 @@
         <option value="1.14">1.14</option>
     </select>
 
-    <select hidden="hidden" id="hantal2">
-        <option value="">--Select--</option>
+    <select hidden="hidden" id="hantal2" onchange="updateButton()">
+        <option value="--Select--">--Select--</option>
         <option value="2.01">2.01</option>
         <option value="2.02">2.02</option>
         <option value="2.03">2.03</option>
@@ -53,8 +55,8 @@
         <option value="2.16">2.16</option>
     </select>
 
-    <select hidden="hidden" id="hantal3">
-        <option value="">--Select--</option>
+    <select hidden="hidden" id="hantal3" onchange="updateButton()">
+        <option value="--Select--">--Select--</option>
         <option value="3.01">3.01</option>
         <option value="3.03">3.03</option>
         <option value="3.05">3.05</option>
@@ -73,8 +75,8 @@
 
     </select>
 
-    <select hidden="hidden" id="hantal4">
-        <option value="">--Select--</option>
+    <select hidden="hidden" id="hantal4" onchange="updateButton()">
+        <option value="--Select--">--Select--</option>
         <option value="4.01">4.01</option>
         <option value="4.02">4.02</option>
         <option value="4.03">4.03</option>
@@ -91,13 +93,13 @@
         <option value="4.17">4.17</option>
     </select>
 
-    <select hidden="hidden" id="hantal5">
+    <select hidden="hidden" id="hantal5" onchange="updateButton()">
         <option value="">--Select--</option>
         <option value="5.">5.</option>
     </select>
 
-    <select hidden="hidden" id="hantal6">
-        <option value="">--Select--</option>
+    <select hidden="hidden" id="hantal6" onchange="updateButton()">
+        <option value="--Select--">--Select--</option>
         <option value="60.04">60.04</option>
         <option value="60.07">60.07</option>
         <option value="60.08">60.08</option>
@@ -117,16 +119,49 @@
         <option value="62.11">62.11</option>
         <option value="62.12">62.12</option>
     </select>
+    <br><br>
+    <button onclick="localStorageTest()" hidden="hidden" type="button" id="button">Toon map</button>
     <script>
+        var currentlocation = ""
+        var wantedlocation = ""
         window.onload = function() {
             var url = window.location.href;
             var parameter = url.split("?").pop();
             if(url.includes("?"))
             {
                 document.getElementById("textbox").value = parameter;
+                currentlocation = parameter;
             }
 
         }
+            function localStorageTest() {
+                localStorage.setItem("currentlocation", currentlocation);
+                localStorage.setItem("wantedlocation", wantedlocation);
+                window.location.href = "map/map.html";
+            }
+            function updateButton()
+            {
+                let element1 = document.getElementById("hantal1");
+                let element2 = document.getElementById("hantal2");
+                let element3 = document.getElementById("hantal3");
+                let element4 = document.getElementById("hantal4");
+                let element5 = document.getElementById("hantal5");
+                let element6 = document.getElementById("hantal6");
+                wantedlocation += element1.value;
+                wantedlocation += element2.value;
+                wantedlocation += element3.value;
+                wantedlocation += element4.value;
+                wantedlocation += element5.value;
+                wantedlocation += element6.value;
+                wantedlocation = wantedlocation.replaceAll("--Select--", '')
+
+                if(element1.value !== "--Select--" || element2.value !== "--Select--" || element3.value !== "--Select--" || element4.value !== "--Select--" || element5.value !== "--Select--" || element6.value !== "--Select--")
+                {
+                    let button = document.getElementById("button");
+                    button.removeAttribute("hidden")
+                }
+            }
+
             function updateSecondList() {
                 var firstList = document.getElementById("firstList");
 
