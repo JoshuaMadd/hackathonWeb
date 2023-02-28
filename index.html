@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>Welkom op Vives!</h1>
-
+    <input type="text" id="textbox">
+<br>
     <label for="firstList">Selecteer een hantal:</label>
     <select id="firstList" onchange="updateSecondList()">
         <option value="">--Select--</option>
@@ -117,6 +118,10 @@
         <option value="62.12">62.12</option>
     </select>
     <script>
+        window.onload = function() {
+            var url = window.location.href;
+            var parameter = url.split("?").pop();
+            document.getElementById("textbox").value = parameter;
         function updateSecondList() {
             var firstList = document.getElementById("firstList");
 
