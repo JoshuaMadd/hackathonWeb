@@ -9,7 +9,7 @@
 <body>
     <h1>Welkom op Vives!</h1>
     <p>Je bent nu hier: </p><input style="border: none;" type="text" id="textbox" readonly disabled>
-<br>
+    <br><br>
     <label for="firstList">Selecteer een hantal:</label>
     <select id="firstList" onchange="updateSecondList()">
         <option value="">--Select--</option>
@@ -121,25 +121,22 @@
         window.onload = function() {
             var url = window.location.href;
             var parameter = url.split("?").pop();
-            document.getElementById("textbox").value = parameter;
+            if(url.includes("?"))
+            {
+                document.getElementById("textbox").value = parameter;
+            }
+
         }
             function updateSecondList() {
                 var firstList = document.getElementById("firstList");
 
                 let element1 = document.getElementById("hantal1");
-                let hidden1 = element1.getAttribute("hidden");
                 let element2 = document.getElementById("hantal2");
-                let hidden2 = element2.getAttribute("hidden");
                 let element3 = document.getElementById("hantal3");
-                let hidden3 = element3.getAttribute("hidden");
                 let element4 = document.getElementById("hantal4");
-                let hidden4 = element4.getAttribute("hidden");
                 let element5 = document.getElementById("hantal5");
-                let hidden5 = element5.getAttribute("hidden");
                 let element6 = document.getElementById("hantal6");
-                let hidden6 = element6.getAttribute("hidden");
 
-                // Add new options based on the selected value in the first list
                 if (firstList.value === "Hantal 1") {
                     element1.removeAttribute("hidden");
                     element2.setAttribute("hidden", "hidden");
@@ -186,7 +183,5 @@
             }
 
     </script>
-
-
 </body>
 </html>
