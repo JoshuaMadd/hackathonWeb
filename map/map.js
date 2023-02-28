@@ -25,7 +25,9 @@ const changeFloor = (event) =>{
 }
 
 const initNodes = () =>{
-    
+    let nodes = [
+        {id:'1', x:'0', y:'0'}
+    ]
 }
 
 window.addEventListener("load",setup);
