@@ -8,5 +8,102 @@
 </head>
 <body>
     <h1>Welkom op Vives!</h1>
+
+    <label for="firstList">Selecteer een hantal:</label>
+    <select id="firstList" onchange="updateSecondList()">
+        <option value="">--Select--</option>
+        <option value="Hantal 1">Hantal 1</option>
+        <option value="Hantal 2">Hantal 2</option>
+        <option value="Hantal 3">Hantal 3</option>
+        <option value="Hantal 4">Hantal 4</option>
+        <option value="Hantal 5">Hantal 5</option>
+        <option value="Hantal 6">Hantal 6</option>
+    </select>
+<br><br>
+
+    <select hidden="hidden" id="hantal1">
+        <option value="">--Select--</option>
+        <option value="1.01">1.01</option>
+        <option value="1.05">1.05</option>
+        <option value="1.06">1.06</option>
+        <option value="1.07">1.07</option>
+        <option value="1.08">1.08</option>
+        <option value="1.09">1.09</option>
+        <option value="1.10">1.10</option>
+        <option value="1.11">1.11</option>
+        <option value="1.12">1.12</option>
+        <option value="1.13">1.13</option>
+        <option value="1.14">1.14</option>
+    </select>
+
+    <select hidden="hidden" id="hantal2">
+        <option value="">--Select--</option>
+        <option value="2.01">2.01</option>
+        <option value="2.01">2.01</option>
+    </select>
+
+
+    <select hidden="hidden" id="hantal3">
+        <option value="">--Select--</option>
+    </select>
+
+
+    <select hidden="hidden" id="hantal4">
+        <option value="">--Select--</option>
+    </select>
+
+
+    <select hidden="hidden" id="hantal5">
+        <option value="">--Select--</option>
+    </select>
+
+
+    <select hidden="hidden" id="hantal6">
+        <option value="">--Select--</option>
+    </select>
+    <script>
+        function updateSecondList() {
+            var firstList = document.getElementById("firstList");
+
+            let element1 = document.getElementById("hantal1");
+            let hidden1 = element1.getAttribute("hidden");
+            let element2 = document.getElementById("hantal2");
+            let hidden2 = element2.getAttribute("hidden");
+            let element3 = document.getElementById("hantal3");
+            let hidden3 = element3.getAttribute("hidden");
+            let element4 = document.getElementById("hantal4");
+            let hidden4 = element4.getAttribute("hidden");
+            let element5 = document.getElementById("hantal5");
+            let hidden5 = element5.getAttribute("hidden");
+            let element6 = document.getElementById("hantal6");
+            let hidden6 = element6.getAttribute("hidden");
+
+            // Add new options based on the selected value in the first list
+            if (firstList.value === "Hantal 1") {
+                element1.removeAttribute("hidden");
+                element2.setAttribute("hidden", "hidden");
+                element3.setAttribute("hidden", "hidden");
+                element4.setAttribute("hidden", "hidden");
+                element5.setAttribute("hidden", "hidden");
+                element6.setAttribute("hidden", "hidden");
+            } else if (firstList.value === "Hantal 2") {
+                element2.removeAttribute("hidden");
+                element1.setAttribute("hidden", "hidden");
+                element3.setAttribute("hidden", "hidden");
+                element4.setAttribute("hidden", "hidden");
+                element5.setAttribute("hidden", "hidden");
+                element6.setAttribute("hidden", "hidden");
+            } else if (firstList.value === "Hantal 3") {
+                element3.removeAttribute("hidden");
+                element2.setAttribute("hidden", "hidden");
+                element1.setAttribute("hidden", "hidden");
+                element4.setAttribute("hidden", "hidden");
+                element5.setAttribute("hidden", "hidden");
+                element6.setAttribute("hidden", "hidden");
+            }
+        }
+    </script>
+
+
 </body>
 </html>
