@@ -5,7 +5,6 @@ console.log(wantedlocation);
 const setup = () => {
     loadFloorChange();
     initNodes();
-    lines();
 }
 
 const loadFloorChange = () =>{
@@ -16,6 +15,7 @@ const loadFloorChange = () =>{
 }
 
 const changeFloor = (event) =>{
+    
     let button = event.target;
     let oldButton = document.getElementsByClassName("selected")[0];
     oldButton.classList.remove("selected")
@@ -27,6 +27,8 @@ const changeFloor = (event) =>{
     let selector = 'img[src*="floorplan/'+ mapId +'.png"]';
     let newMap = document.querySelector(selector);
     newMap.style.display = "block";
+
+    updateNodes()
 }
 
 const initNodes = () =>{
@@ -43,28 +45,16 @@ const initNodes = () =>{
     ]
     nodes.forEach(node => {
         let div = document.createElement("div");
-        div.style.backgroundColor = "red"
-        if(node.floor == 1) {
-            div.style.backgroundColor = "lime"
-        }
-        div.style.position = "absolute"
-        div.style.width = "10px"
-        div.style.height = "10px"
+        div.classList.add('nodeFloor'+node.floor)
         div.style.left = node.x
         div.style.top = node.y
         document.getElementsByTagName('body')[0].appendChild(div)
     });
 }
 
-const lines = () =>{
-    var newLine = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    newLine.setAttribute('id','line1');
-    newLine.setAttribute('x1', node[0].x);
-    newLine.setAttribute('y1', node[0].y);
-    newLine.setAttribute('x2',node[1].x);
-    newLine.setAttribute('y2',node[1].y);
-    newLine.setAttribute("stroke", "red")
-    $("svg").append(newLine);
-}
+
+
+
+
 
 window.addEventListener("load",setup);
