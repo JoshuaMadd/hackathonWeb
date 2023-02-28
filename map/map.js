@@ -5,6 +5,7 @@ console.log(wantedlocation);
 const setup = () => {
     loadFloorChange();
     initNodes();
+    updateNodes()
 }
 
 const loadFloorChange = () =>{
@@ -15,6 +16,7 @@ const loadFloorChange = () =>{
 }
 
 const changeFloor = (event) =>{
+    
     let button = event.target;
     let oldButton = document.getElementsByClassName("selected")[0];
     oldButton.classList.remove("selected")
@@ -26,6 +28,8 @@ const changeFloor = (event) =>{
     let selector = 'img[src*="floorplan/'+ mapId +'.png"]';
     let newMap = document.querySelector(selector);
     newMap.style.display = "block";
+
+    updateNodes()
 }
 
 const initNodes = () =>{
@@ -42,17 +46,26 @@ const initNodes = () =>{
     ]
     nodes.forEach(node => {
         let div = document.createElement("div");
-        div.style.backgroundColor = "red"
-        if(node.floor == 1) {
-            div.style.backgroundColor = "lime"
-        }
-        div.style.position = "absolute"
-        div.style.width = "10px"
-        div.style.height = "10px"
+        div.classList.add('nodeFloor'+node.floor)
         div.style.left = node.x
         div.style.top = node.y
         document.getElementsByTagName('body')[0].appendChild(div)
     });
+}
+
+const updateNodes = () =>{
+    let currentFloor = document.getElementsByClassName("selected")[0].innerText - 1;
+    currentFloor = "nodeFloor" + currentFloor
+    let allNodes = document.querySelectorAll('.nodeFloor0, .nodeFloor1, .nodeFloor2');
+    allNodes.forEach(node => {
+        if(node.classList.contains(currentFloor)){
+            node.style.display = "block"
+        } else {
+          node.style.display = "none"  
+        }
+        
+    });
+    
 }
 
 

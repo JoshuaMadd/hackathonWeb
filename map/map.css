@@ -14,3 +14,21 @@
 .selected {
     background-color: gray;
 }
+
+.nodeFloor0, .nodeFloor1, .nodeFloor2{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+}
+
+.nodeFloor0{
+    background-color: red;
+}
+
+.nodeFloor1{
+    background-color: lime;
+}
+
+.nodeFloor2{
+    background-color: cyan;
+}
