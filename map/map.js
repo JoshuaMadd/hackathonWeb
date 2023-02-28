@@ -26,9 +26,18 @@ const changeFloor = (event) =>{
 
 const initNodes = () =>{
     let nodes = [
-        {id:'1', x:'0', y:'0'},
+        {id:'C', x:'260px', y:'1355px', floor:'0'},
 
     ]
+    let node = nodes[0];
+    let div = document.createElement("div");
+    div.style.backgroundColor = "red"
+    div.style.position = "absolute"
+    div.style.width = "10px"
+    div.style.height = "10px"
+    div.style.left = "315px"
+    div.style.top = "1355px"
+    document.getElementsByTagName('body')[0].appendChild(div)
 }
 
 
