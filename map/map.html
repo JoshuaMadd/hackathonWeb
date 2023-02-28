@@ -1,11 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map</title>
     <link rel="stylesheet" href="map.css">
+        
+    <script>        
+        document.onmouseup=getXYPosition;
+
+        var myX, myY, xyOn, myMouseX, myMouseY;
+        xyOn = true;
+        function getXYPosition(e){
+        myMouseX=(e||event).clientX;
+        myMouseY=(e||event).clientY;
+        if (document.documentElement.scrollTop > 0) {
+        myMouseY = myMouseY + document.documentElement.scrollTop;
+        }
+        if (xyOn) {
+        alert("X is " + myMouseX + "\nY is " + myMouseY);
+        }
+        }
+        function toggleXY() {
+        xyOn = !xyOn;
+        document.getElementById('xyLink').blur();
+        return false;
+        }
+            </script>
 </head>
 <body>
 
