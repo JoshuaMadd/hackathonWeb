@@ -1,3 +1,7 @@
+let currentlocation = localStorage.getItem("currentlocation");
+let wantedlocation = localStorage.getItem("wantedlocation");
+console.log(currentlocation);
+console.log(wantedlocation);
 const setup = () => {
     loadFloorChange();
     initNodes();
