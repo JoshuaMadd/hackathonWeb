@@ -5,7 +5,7 @@
 }
 
 .floorselect > div{
-    padding: 0.5em;
+    padding: 2vw;
     border-style: solid;
     border-width: 1px;
     cursor: pointer;
@@ -13,8 +13,4 @@
 
 .selected {
     background-color: gray;
-}
-
-img{
-    width: 100vw;
 }
