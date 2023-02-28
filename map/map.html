@@ -7,28 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map</title>
     <link rel="stylesheet" href="map.css">
+    
+    
         
-    <script>        
-        document.onmouseup=getXYPosition;
-
-        var myX, myY, xyOn, myMouseX, myMouseY;
-        xyOn = true;
-        function getXYPosition(e){
-        myMouseX=(e||event).clientX;
-        myMouseY=(e||event).clientY;
-        if (document.documentElement.scrollTop > 0) {
-        myMouseY = myMouseY + document.documentElement.scrollTop;
-        }
-        if (xyOn) {
-        alert("X is " + myMouseX + "\nY is " + myMouseY);
-        }
-        }
-        function toggleXY() {
-        xyOn = !xyOn;
-        document.getElementById('xyLink').blur();
-        return false;
-        }
-            </script>
 </head>
 <body>    
     <img src="floorplan/0.png" style="display: block; position: relative;">
