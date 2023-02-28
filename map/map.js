@@ -27,6 +27,11 @@ const changeFloor = (event) =>{
 const initNodes = () =>{
     let nodes = [
         {id:'C', x:'260px', y:'1355px', floor:'0'},
+        {id:'7', x:'450px', y:'1360px', floor:'0'},
+        {id:'6', x:'450px', y:'1084px', floor:'0'},
+        {id:'8', x:'421px', y:'1084px', floor:'0'},
+        {id:'17', x:'893px', y:'1084px', floor:'1'},
+        {id:'61.09', x:'1080px', y:'1130px', floor:'1'}
 
     ]
     let node = nodes[0];
