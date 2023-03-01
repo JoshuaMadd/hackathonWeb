@@ -77,5 +77,15 @@ svg{
 }
 
 #currentNode{
-    outline: 5px solid black
+    outline: 5px solid black;
+    animation: blinker 1s linear infinite;
 }
+
+@keyframes blinker {
+    50% {
+        outline: 1px;
+    }
+    100% {
+        outline: 5px solid black;
+    }
+  }

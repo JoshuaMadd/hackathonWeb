@@ -111,6 +111,11 @@ const navBack = () =>{
     let p = document.querySelector('.navBar > p')
     p.innerText = nodes[currentStep].getAttribute("data-instructie")
     changeFloorI(parseInt(nodes[currentStep].getAttribute('data-floor')))
+    document.getElementById('currentNode').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center'
+      });
 }
 
 const navForw = () =>{
@@ -125,6 +130,11 @@ const navForw = () =>{
     let p = document.querySelector('.navBar > p')
     p.innerText = nodes[currentStep].getAttribute("data-instructie")
     changeFloorI(parseInt(nodes[currentStep].getAttribute('data-floor')))
+    document.getElementById('currentNode').scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center'
+      });
 }
 
 const changeFloorI = (i) =>{
