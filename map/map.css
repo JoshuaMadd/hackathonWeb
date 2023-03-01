@@ -69,6 +69,11 @@ svg{
     left:50%;
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+    
+}
+
+.center > button{
+    padding: 1em;
 }
 
 #currentNode{
