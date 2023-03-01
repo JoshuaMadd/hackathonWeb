@@ -45,3 +45,13 @@ svg{
 .nodeFloor2, .svgFloor2 > line{
     background-color: cyan;
 }
+
+.navBar{
+    position: fixed;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: x-large;
+}
+
+.navBar

@@ -59,6 +59,7 @@ const initNodes = () =>{
         div.classList.add('nodeFloor'+node.floor)
         div.style.left = node.x
         div.style.top = node.y
+        //div.style.outline = "5px solid black"
         document.getElementsByTagName('body')[0].appendChild(div)        
     });
 }
