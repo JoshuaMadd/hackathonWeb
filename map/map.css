@@ -52,6 +52,21 @@ svg{
     left: 50%;
     transform: translateX(-50%);
     font-size: x-large;
+    max-width: 50vw;
+}
+
+.navBar > p {
+    border: 2px solid black;
+    text-align: center;
+}
+
+
+.center{
+    margin: 0;
+    position: absolute;
+    left:50%;
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 #currentNode{
