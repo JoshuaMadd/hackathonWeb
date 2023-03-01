@@ -46,7 +46,7 @@ const initNodes = () =>{
         {id:'T600', x:'1100px', y:'1084px', floor:'0',
         instructie:'Loop de trappen op tot op de eerste verdieping'},
         {id:'T601', x:'1100px', y:'1084px', floor:'1',
-        instructie:'Blijd op de eerste verdieping en loop rechtdoor tot naast de trap naar de tweede verdieping'},
+        instructie:'Blijf op de eerste verdieping en loop rechtdoor tot naast de trap naar de tweede verdieping'},
         {id:'17', x:'1250px', y:'1084px', floor:'1',
         instructie:'Ga schuin rechtsaf waar je lokaal 61.09 op je rechterkant zal kunnen vinden'},
         {id:'61.09', x:'1400px', y:'1130px', floor:'1',
