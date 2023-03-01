@@ -6,6 +6,7 @@ const setup = () => {
     loadFloorChange();
     initNodes();
     updateNodes();
+    loadNav();
 }
 
 const loadFloorChange = () =>{
@@ -84,7 +85,11 @@ const updateNodes = () =>{
           line.style.display = "none"  
         }  
     });
+}
+
+const loadNav = () =>{
     
+
 }
 
 
