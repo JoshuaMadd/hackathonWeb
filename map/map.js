@@ -34,14 +34,22 @@ const changeFloor = (event) =>{
 
 const initNodes = () =>{
     let nodes = [
-        {id:'C', x:'320px', y:'1355px', floor:'0'},
-        {id:'7', x:'450px', y:'1355px', floor:'0'},
-        {id:'6', x:'450px', y:'1084px', floor:'0'},
-        {id:'8', x:'990px', y:'1084px', floor:'0'},
-        {id:'T600', x:'1100px', y:'1084px', floor:'0'},
-        {id:'T601', x:'1100px', y:'1084px', floor:'1'},
-        {id:'17', x:'1250px', y:'1084px', floor:'1'},
-        {id:'61.09', x:'1400px', y:'1130px', floor:'1'}
+        {id:'C', x:'320px', y:'1355px', floor:'0',
+         instructie:''},
+        {id:'7', x:'450px', y:'1355px', floor:'0',
+         instructie:''},
+        {id:'6', x:'450px', y:'1084px', floor:'0',
+        instructie:''},
+        {id:'8', x:'990px', y:'1084px', floor:'0',
+        instructie:''},
+        {id:'T600', x:'1100px', y:'1084px', floor:'0',
+        instructie:''},
+        {id:'T601', x:'1100px', y:'1084px', floor:'1',
+        instructie:''},
+        {id:'17', x:'1250px', y:'1084px', floor:'1',
+        instructie:''},
+        {id:'61.09', x:'1400px', y:'1130px', floor:'1',
+        instructie:''}
 
     ]
 
