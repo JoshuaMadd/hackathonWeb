@@ -15,20 +15,33 @@
     background-color: gray;
 }
 
+svg{
+    position:absolute;
+    height: 1740px;
+    width: 1700px;
+}
+
 .nodeFloor0, .nodeFloor1, .nodeFloor2{
     width: 10px;
     height: 10px;
     position: absolute;
 }
 
-.nodeFloor0{
+.svgFloor0, .svgFloor1, .svgFloor2{
+    stroke-width: 5px;
+    stroke-dasharray: 10;
+}
+
+.nodeFloor0, .svgFloor0 > line{
     background-color: red;
+    stroke: red;
 }
 
-.nodeFloor1{
+.nodeFloor1, .svgFloor1 > line{
     background-color: lime;
+    stroke: lime;
 }
 
-.nodeFloor2{
+.nodeFloor2, .svgFloor2 > line{
     background-color: cyan;
 }

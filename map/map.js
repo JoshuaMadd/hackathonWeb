@@ -35,7 +35,7 @@ const changeFloor = (event) =>{
 const initNodes = () =>{
     let nodes = [
         {id:'C', x:'320px', y:'1355px', floor:'0'},
-        {id:'7', x:'450px', y:'1360px', floor:'0'},
+        {id:'7', x:'450px', y:'1355px', floor:'0'},
         {id:'6', x:'450px', y:'1084px', floor:'0'},
         {id:'8', x:'990px', y:'1084px', floor:'0'},
         {id:'T600', x:'1100px', y:'1084px', floor:'0'},
@@ -44,12 +44,14 @@ const initNodes = () =>{
         {id:'61.09', x:'1400px', y:'1130px', floor:'1'}
 
     ]
+
+    let lastnode = null;
     nodes.forEach(node => {
         let div = document.createElement("div");
         div.classList.add('nodeFloor'+node.floor)
         div.style.left = node.x
         div.style.top = node.y
-        document.getElementsByTagName('body')[0].appendChild(div)
+        document.getElementsByTagName('body')[0].appendChild(div)        
     });
 }
 
@@ -63,7 +65,6 @@ const updateNodes = () =>{
         } else {
           node.style.display = "none"  
         }
-        
     });
     
 }
