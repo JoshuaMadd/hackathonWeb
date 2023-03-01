@@ -5,6 +5,7 @@ console.log(wantedlocation);
 const setup = () => {
     loadFloorChange();
     initNodes();
+    updateNodes();
 }
 
 const loadFloorChange = () =>{
@@ -56,14 +57,23 @@ const initNodes = () =>{
 
 const updateNodes = () =>{
     let currentFloor = document.getElementsByClassName("selected")[0].innerText - 1;
-    currentFloor = "nodeFloor" + currentFloor
+    let currentFloorNode = "nodeFloor" + currentFloor
+    let currentFloorLine = "svgFloor" + currentFloor
     let allNodes = document.querySelectorAll('.nodeFloor0, .nodeFloor1, .nodeFloor2');
     allNodes.forEach(node => {
-        if(node.classList.contains(currentFloor)){
+        if(node.classList.contains(currentFloorNode)){
             node.style.display = "block"
         } else {
           node.style.display = "none"  
-        }
+        }  
+    });
+    let allLines = document.querySelectorAll('.svgFloor0, .svgFloor1, .svgFloor2');
+    allLines.forEach(line => {
+        if(line.classList.contains(currentFloorLine)){
+            line.style.display = "block"
+        } else {
+          line.style.display = "none"  
+        }  
     });
     
 }
