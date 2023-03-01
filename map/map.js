@@ -5,7 +5,6 @@ console.log(wantedlocation);
 const setup = () => {
     loadFloorChange();
     initNodes();
-    updateNodes()
 }
 
 const loadFloorChange = () =>{
