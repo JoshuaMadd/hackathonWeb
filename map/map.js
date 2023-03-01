@@ -54,13 +54,14 @@ const initNodes = () =>{
 
     ]
 
-    let lastnode = null;
     nodes.forEach(node => {
         let div = document.createElement("div");
         div.classList.add('nodeFloor'+node.floor)
+        div.classList.add('node')
         div.style.left = node.x
         div.style.top = node.y
-        //div.style.outline = "5px solid black"
+        div.dataset.instructie = node.instructie
+        div.dataset.floor = node.floor
         document.getElementsByTagName('body')[0].appendChild(div)        
     });
 }
@@ -87,9 +88,51 @@ const updateNodes = () =>{
     });
 }
 
-const loadNav = () =>{
-    
+let currentStep = 1;
 
+const loadNav = () =>{
+    let buttons = document.getElementsByTagName('button');
+    buttons[0].addEventListener('click',navBack)
+    buttons[1].addEventListener('click',navForw)
+    let firstNode = document.querySelector('.node');
+    firstNode.id = "currentNode"
+    navBack()
+}
+
+const navBack = () =>{
+    if(currentStep === 0){
+        return;
+    }
+    currentStep--;
+    let nodes = document.getElementsByClassName('node')
+    let currentNode = document.getElementById('currentNode')
+    currentNode.id = "";
+    nodes[currentStep].id = "currentNode"
+    let p = document.querySelector('.navBar > p')
+    p.innerText = nodes[currentStep].getAttribute("data-instructie")
+    changeFloorI(parseInt(nodes[currentStep].getAttribute('data-floor')))
+}
+
+const navForw = () =>{
+    let nodes = document.getElementsByClassName('node')
+    if(currentStep > nodes.length - 2){
+        return;
+    }
+    currentStep++
+    let currentNode = document.getElementById('currentNode')
+    currentNode.id = "";
+    nodes[currentStep].id = "currentNode"
+    let p = document.querySelector('.navBar > p')
+    p.innerText = nodes[currentStep].getAttribute("data-instructie")
+    changeFloorI(parseInt(nodes[currentStep].getAttribute('data-floor')))
+}
+
+const changeFloorI = (i) =>{
+    let sel = document.getElementsByClassName('selected')[0]
+    sel.classList.toggle('selected')
+    let opts = document.getElementsByClassName('opt')
+    opts[2-i].classList.toggle('selected')
+    updateNodes()
 }
 
 

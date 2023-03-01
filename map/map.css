@@ -53,3 +53,7 @@ svg{
     transform: translateX(-50%);
     font-size: x-large;
 }
+
+#currentNode{
+    outline: 5px solid black
+}
