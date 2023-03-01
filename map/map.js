@@ -133,6 +133,13 @@ const changeFloorI = (i) =>{
     let opts = document.getElementsByClassName('opt')
     opts[2-i].classList.toggle('selected')
     updateNodes()
+
+    let mapId = i;
+    let oldMap = document.querySelector('img[style*="display: block;"]');
+    oldMap.style.display = "none";
+    let selector = 'img[src*="floorplan/'+ mapId +'.png"]';
+    let newMap = document.querySelector(selector);
+    newMap.style.display = "block";
 }
 
 
