@@ -35,21 +35,21 @@ const changeFloor = (event) =>{
 const initNodes = () =>{
     let nodes = [
         {id:'C', x:'320px', y:'1355px', floor:'0',
-         instructie:''},
+         instructie:'U staat nu aan de ingang van Hantal 5'},
         {id:'7', x:'450px', y:'1355px', floor:'0',
-         instructie:''},
+         instructie:'Betreed het gebouw en neem de eerste afslag links'},
         {id:'6', x:'450px', y:'1084px', floor:'0',
-        instructie:''},
+        instructie:'Sla rechtsaf en loop rechtdoor'},
         {id:'8', x:'990px', y:'1084px', floor:'0',
-        instructie:''},
+        instructie:'Blijf lopen tot je aan de trappen staat'},
         {id:'T600', x:'1100px', y:'1084px', floor:'0',
-        instructie:''},
+        instructie:'Loop de trappen op tot op de eerste verdieping'},
         {id:'T601', x:'1100px', y:'1084px', floor:'1',
-        instructie:''},
+        instructie:'Blijd op de eerste verdieping en loop rechtdoor tot naast de trap naar de tweede verdieping'},
         {id:'17', x:'1250px', y:'1084px', floor:'1',
-        instructie:''},
+        instructie:'Ga schuin rechtsaf waar je lokaal 61.09 op je rechterkant zal kunnen vinden'},
         {id:'61.09', x:'1400px', y:'1130px', floor:'1',
-        instructie:''}
+        instructie:'U hebt lokaal 61.09 bereikt!'}
 
     ]
 
